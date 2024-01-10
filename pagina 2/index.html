@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="es"><head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/diagnostico.css">
+  <link rel="shortcut icon" href="images/logo.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Poppins&display=swap" rel="stylesheet">
+
+  <title>Diagnóstico</title>
+</head>
+<body>
+  <img src="./images/img.png" alt="imagem para iosempic natural">
+  <h1>Aqui está o seu resumo e algumas informações <span>importantes</span><br> que usamos para montar o seu plano de <span>perda de peso!</span></h1>
+
+   <a class="btn" href="../pagina app/index.html">ACESSE SUA RECEITA PERSONALIZADA</a>
+
+
+  <main>
+    <section>
+      
+      <h2>Calorias diárias</h2>
+      <h3><span id="resultadoCalorias"></span> Calorias</h3>
+      <h4 style="display: none">Quantidade recomendada:</h4>
+      <h5 style="display: none"><span id="descResultadoCalorias"></span>kcal</h5>
+    </section>
+
+    <section>
+      <h2>Gorduras diárias</h2>
+      <h3><span id="resultadoGorduras"></span>g Gordura</h3>
+      <h4 style="display: none">Quantidade recomendada:</h4>
+      <h5 style="display: none"><span id="descResultadoGorduras"></span>g</h5>
+    </section>
+
+    <section>
+      <h2>Proteínas diárias</h2>
+      <h3><span id="resultadoProteinas"></span>g Proteínas</h3>
+      <h4 style="display: none">Quantidade recomendada:</h4>
+      <h5 style="display: none"><span id="descResultadoProteinas"></span>g</h5>
+    </section>
+
+    <section>
+      <h2>Carboidratos diárias</h2>
+      <h3><span id="resultadoCarboidratosDiarios"></span>g Carboidratos</h3>
+      <h4 style="display: none">Quantidade recomendada:</h4>
+      <h5 style="display: none"><span id="descResultadoCarboidratosDiarios"></span>g</h5>
+    </section>
+
+    <section>
+      <h2>Consumo diário de água</h2>
+      <h3 class="resultadoPrincipal"><span id="resultadoQuantidadeAgua"></span>L</h3>
+      <h4 style="display: none">Quantidade recomendada:</h4>
+      <h5 style="display: none" class="subResultadoPrincipal"><span id="descResultadoQuantidadeAgua"></span>L</h5>
+    </section>
+
+    <section>
+      <h2>Seu IMC</h2>
+      <h3 class="resultadoPrincipal"><span id="resultadoIMC"></span></h3>
+      <h4 style="display: none">Seu IMC:</h4>
+      <h5 style="display: none" class="subResultadoPrincipal"><span id="statusIMC">Baixo peso</span></h5>
+    </section>
+  </main>
+
+  <a class="btn" href="../pagina app/index.html">ACESSE SUA RECEITA PERSONALIZADA</a>
+
+  <script>
+    // Pegar os dados do localStorage
+    const caloriasDiarias = localStorage.getItem('caloriasDiarias');
+    const descCaloriasDiarias = localStorage.getItem('descCaloriasDiarias');
+
+    const gordurasDiarias = localStorage.getItem('gramasGorduras');
+    const descGordurasDiarias = localStorage.getItem('descGramasGorduras');
+
+    const proteinasDiarias = localStorage.getItem('gramasProteinas');
+    const descProteinasDiarias = localStorage.getItem('descGramasProteinas');
+
+    const carboidratosDiarios = localStorage.getItem('gramasCarboidratos');
+    const descCarboidratosDiarios = localStorage.getItem('descGramasCarboidratos');
+
+    const quantidadeAgua = localStorage.getItem('quantidadeAgua');
+    const descQuantidadeAgua = localStorage.getItem('descQuantidadeAgua');
+
+    const imc = localStorage.getItem('resultadoIMC');
+  
+    // Atualizar os spans com os resultados
+    document.getElementById('resultadoCalorias').textContent = caloriasDiarias;
+    document.getElementById('descResultadoCalorias').textContent = descCaloriasDiarias;
+
+    document.getElementById('resultadoGorduras').textContent = gordurasDiarias;
+    document.getElementById('descResultadoGorduras').textContent = descGordurasDiarias;
+
+    document.getElementById('resultadoProteinas').textContent = proteinasDiarias;
+    document.getElementById('descResultadoProteinas').textContent = descProteinasDiarias;
+    
+    document.getElementById('resultadoCarboidratosDiarios').textContent = carboidratosDiarios;
+    document.getElementById('descResultadoCarboidratosDiarios').textContent = descCarboidratosDiarios;
+
+    document.getElementById('resultadoQuantidadeAgua').textContent = quantidadeAgua;
+    document.getElementById('descResultadoQuantidadeAgua').textContent = descQuantidadeAgua;
+
+    document.getElementById('resultadoIMC').textContent = imc;
+    document.getElementById('statusIMC').textContent = getIMCStatus(imc);
+
+    function getIMCStatus(imc) {
+    if (imc < 18.5) {
+      return 'Baixo peso';
+    } else if (imc < 24.9) {
+      return 'Normal';
+    } else if (imc < 29.9) {
+      return 'Sobrepeso';
+    } else {
+      return 'Obesidade';
+    }
+  }
+  </script>
+  
+
+</body></html>
