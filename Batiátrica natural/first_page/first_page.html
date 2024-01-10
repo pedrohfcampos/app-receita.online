@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="pt-br"><head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/first_page.css">
+    <link rel="shortcut icon" href="">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Poppins&display=swap"
+      rel="stylesheet">
+
+    <title>App Bariátrica Natural</title>
+  </head>
+  <body>
+    <main>
+      <img src="./images/1.png" alt="Logo App Bariátrica Nature">
+
+      <fieldset>
+
+        <h1>Bem vindo ao <span>App Bariátrica Natural</span>, complete seus dados
+          para gerar seu <span>plano personalizado!</span></h1>
+
+        <form action="../pagina 2/index.html" id="formCalc">
+
+          <div class="input-wrapper">
+
+            <input type="number" id="inputIdade" placeholder="Idade" min="18"
+              max="100" required>
+            <input type="number" id="inputAltura" placeholder="Altura (em cm)"
+              min="140" max="210" required>
+            <input type="number" id="inputPeso" placeholder="Peso (em kg)"
+              min="40"
+              max="150" required>
+            <input type="number" id="inputPesoDesejado"
+              placeholder="Peso desejado (em kg)" required>
+
+          </div>
+
+        </fieldset>
+
+        <fieldset>
+
+          <h2>Qual é seu sexo?</h2>
+
+          <div class="alignRadio">
+            <div class="alignRadioItem">
+              <label for="Masculino">Masculino</label>
+              <input type="checkbox" name="gender" id="Masculino" required>
+            </div>
+            <div class="alignRadioItem">
+              <label for="Femenino">Feminino</label>
+              <input type="checkbox" name="gender" id="Femenino">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+
+          <h2>Qual é seu nível de atividade diária?</h2>
+          <div class="input-wrapper">
+            <select id="Actividad" required>
+              <option value="valor1" selected>Nenhuma atividade</option>
+              <option value="valor2">Atividade mínima</option>
+              <option value="valor3">Atividade moderada</option>
+              <option value="valor4">Muito ativo</option>
+              <option value="valor5">Extremamente ativo</option>
+            </select>
+
+          </div>
+
+        </fieldset>
+        <footer>
+          <button type="submit" class="button" >Entrar</button>
+
+        </footer>
+
+      </form>
+    </main>
+
+    <script src="./js/calculo.js"></script>
+    <script src="./js/recomendacaoPeso.js"></script>
+
+  </body></html>
